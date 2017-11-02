@@ -37,7 +37,7 @@ greeting();
 
 //Template literals
 let a = `Hola`;
-let b = `${a} perra`;
+let b = `${a} ke ase`;
 
 console.log(b);
 
@@ -52,10 +52,10 @@ let arr4 = ['Alice', 'Bob', 'Carl', ...arr3];
 console.log(arr4);
 
 //Rest parameters
-function chamaladoy(...params){
+function restparamtests(...params){
 	console.log(params);
 }
-chamaladoy("Perra", "No", "La", "Das");
+restparamtests(1, 2, 3, 4);
 
 //Destructuring assignment on Arrays and objects
 let arr5 = [4,5,6,7,8];
@@ -74,3 +74,47 @@ let lion = {
 let { name, kids } = lion;
 
 console.log(name, kids);
+
+//Arrow functions
+
+let cheer = () => {
+	console.log("Woohoo!");
+}
+
+cheer();
+
+//Map and filter methods
+
+let values = [20, 30, 40];
+
+let doubled = values.map((n) => n*2);
+
+console.log(doubled);
+
+let filters = doubled.filter((n) => n<80);
+
+console.log(filters);
+
+//String helper methods
+let str = "Wooh" + "oo".repeat(50);
+console.log(str);
+
+console.log("arepera".startsWith("are"));
+console.log("arepera".endsWith("era"));
+console.log("arepera".includes("pera"));
+
+//Checking numbers
+
+const checkNumber = (item, number) => {
+	//return Number.isFinite(number);
+	return Number.isSafeInteger(number);
+}
+
+console.log(checkNumber('random Item',5));
+
+//Modules
+import {add} from './math';
+import multiply from './math';
+
+console.log(add(3,5));
+console.log(multiply(3,2));
