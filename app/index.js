@@ -118,3 +118,14 @@ import multiply from './math';
 
 console.log(add(3,5));
 console.log(multiply(3,2));
+
+//Classes
+import {Animal, Lion, Calculator} from './animalClass';
+let king = new Animal("Mufasa", 4.5);
+king.hello();
+
+let kingsSon = new Lion("Simba", 3, "Gold");
+kingsSon.hello();
+
+let calculatorVar = Calculator.multiply(3,9);
+console.log(calculatorVar);
