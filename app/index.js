@@ -129,3 +129,21 @@ kingsSon.hello();
 
 let calculatorVar = Calculator.multiply(3,9);
 console.log(calculatorVar);
+
+//Prototypes
+
+function Wizard(name, house, pet){
+	this.name = name;
+	this.house = house;
+	this.pet = pet;
+	this.greet = () => `I'm ${this.name} from ${this.house}`
+}
+
+Wizard.prototype.info = function(){
+	return `Just testing`;
+}
+
+let harry = new Wizard("Harry Potter", "Gryffindor", "Owl");
+
+console.log(harry.greet());
+console.log(harry.info());
