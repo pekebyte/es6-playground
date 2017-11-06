@@ -269,7 +269,9 @@ function* letterMaker() {
 }
 
 let letterGen = letterMaker();
-
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
 //Promises
 
 let async = new Promise((resolve,reject) => {
@@ -287,3 +289,37 @@ const route = "https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699";
 fetch(route, {method: "GET"})
 	.then(response => response.json())
 	.then(json => console.log(json));
+
+
+//ES 7 Features
+console.log('ES7 ---');
+let pow = 2**5; //Math.pow(2,5) equivalent
+
+console.log(pow);
+
+let stringb = "wonderful".includes("wonder");
+
+console.log(stringb);
+
+let arrrs = [2,3,6,7,8].includes(8);
+console.log(arrrs);
+
+//ES8 Proposals
+console.log('ES 8 ----');
+let objTest8 = {a: "one", b: "two", c: "three"};
+let objTestKeys8 = Object.keys(objTest8);
+let objTestValues8 = Object.values(objTest8);
+console.log(objTestKeys8);
+console.log(objTestValues8);
+
+let objEntries = Object.entries(objTest8);
+
+for (let entry in objEntries){
+	console.log(`Key is ${entry[0]} and value is ${entry[1]}`);
+}
+
+async function async_one(){
+	return "one";
+}
+
+async_one().then(response => console.log(response));
