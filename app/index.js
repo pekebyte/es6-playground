@@ -256,3 +256,34 @@ let wallet = budget();
 wallet.deposit20();
 
 console.log(wallet.check());
+
+//Generators
+
+function* letterMaker() {
+  // TODO add yields
+  //
+  //
+  yield 'x';
+  yield 'y';
+  yield 'z';
+}
+
+let letterGen = letterMaker();
+
+//Promises
+
+let async = new Promise((resolve,reject) => {
+	// reject('Rejected promise data');
+	setTimeout(()=> resolve('resolved promise data'), 3000);
+})
+
+async.then(response => console.log(response))
+	.catch(error => console.log(error));
+
+//Consuming API
+
+const route = "https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699";
+
+fetch(route, {method: "GET"})
+	.then(response => response.json())
+	.then(json => console.log(json));
